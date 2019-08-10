@@ -1,0 +1,178 @@
+﻿
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>制定消缺任务</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	
+	<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/select.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/jquery.idTabs.min.js"></script>
+	<script type="text/javascript" src="../../js/select-ui.min.js"></script>
+	<script type="text/javascript" src="../../editor/kindeditor.js"></script>
+	
+	
+	
+	<script type="text/javascript">
+	function back(){
+	  history.back();
+	 }
+	    KE.show({
+	        id : 'content7',
+	        cssPath : './index.css'
+	    });
+	</script>
+  
+	<script type="text/javascript">
+	$(document).ready(function(e) {
+	    $(".select1").uedSelect({
+			width : 120		  
+		});
+	});
+	</script>
+	</head>
+
+	<body>
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li><a href="OrgTaskController/task.do">消缺任务管理</a></li>
+				<li><a href="OrgTaskController/task.do">消缺任务制定与分配</a></li>
+				<li><a href="AddTaskController/add.do">制定消缺任务</a></li>
+			</ul>
+		</div>
+		
+		<form action="index.html" class="formbody"  >
+	    	<div id="usual1" class="usual">
+	    		<div class="itab">
+				  	<ul> 
+				    <li><a href="#tab" class="selected">制定消缺任务</a></li>
+				  	</ul>
+			    </div> 
+	    
+			  	<div id="tab" class="tabson">
+			    <ul class="forminfo">
+			    <li><label>任务编号<b>*</b></label>
+			    	<input name="stBid" id="stBid" type="text" class="dfinput" value=""  style="width:200px;"  onblur="addId()"/> &nbsp; &nbsp; &nbsp;
+			    	任务名称<b>*</b>
+			    	<input name="stName" id="stName" type="text" class="dfinput" value=""  style="width:200px;" />
+			    	<span id="noneName"></span>
+			    </li>
+			    
+			    <li><label>工作单据<b>*</b></label>
+					<div class="vocation">
+					    <select class="select1" name="stBdid"  onClick="addBillName()">
+						    <option value="0">--请选择--</option>
+							<option value="0">第一种单据</option>
+							<option value="0">第二组单据</option> 
+					    </select>
+					    <span id="noneBillName"></span>
+					</div>
+				</li>
+				<li><label>任务负责人<b>*</b></label>
+					<div class="vocation">
+					    <select class="select1" name="stUsid">
+						    <option value="0">--请选择--</option>
+						    <option>管理员1</option>
+							<option>管理员2</option>
+							<option>管理员3</option>
+					    </select>
+					</div>
+				</li>
+				<li><label>下发人：</label>
+					<input  type="text" class="dfinput" value="admin" readonly  style="width:200px;"/>
+					&nbsp; &nbsp; &nbsp;
+				下发时间：
+					<input  type="text" class="dfinput" value="2013-12-12" readonly  style="width:200px;"/>
+     				
+     			</li>
+				<li><label>任务描述：</label>
+					<textarea  class="dfinput"></textarea>
+				&nbsp; &nbsp; &nbsp;
+				备注：
+					<textarea  class="dfinput"></textarea>
+				</li>
+				<li>消缺员：<input type="checkbox" >人员1<input type="checkbox" >人员2<input type="checkbox" >人员3<input type="checkbox" >人员4
+			</div>
+		</div> 
+		
+    
+
+	<div class="place">
+     缺陷列表:
+   
+    </div>
+<table class="tablelist" >
+    	<thead>
+    	<tr>
+        
+        <th><input type="checkbox"></th>
+        <th>线路编号</th>
+        <th>塔杆编号</th>
+        <th>缺陷类型</th>
+        <th>缺陷描述</th>
+        <th>发现时间</th>
+        <th>发现人员</th>
+        <th>缺陷级别</th>
+        </tr>
+        </thead>
+        <tbody>
+     
+        <tr> 
+		 <td><input type="checkbox"></td>
+         
+         <td>XW0010</td>
+         <td>XW0001</td>
+         <td>拦河线断裂</td>
+        
+         <td>断裂严重</td>
+         <td>2015-2-10</td>
+         <td>检测人员1</td>
+         <td>紧急  </td>
+        </tr> 
+      
+	   
+	   <tr> 
+		 <td><input type="checkbox"></td>
+         
+         <td>XW0010</td>
+         <td>XW0001</td>
+         <td>拦河线断裂</td>
+        
+         <td>断裂严重</td>
+         <td>2015-2-10</td>
+         <td>检测人员1</td>
+         <td>紧急  </td>
+        </tr> 
+       
+
+         <tr> 
+		 <td><input type="checkbox"></td>
+         
+         <td>XW0010</td>
+         <td>XW0001</td>
+         <td>拦河线断裂</td>
+        
+         <td>断裂严重</td>
+         <td>2015-2-10</td>
+         <td>检测人员1</td>
+         <td>紧急  </td>
+        </tr> 
+        </tbody>
+    </table>
+<input type="submit"  class="scbtn" type="button" value="提交">
+		<input class="scbtn1" type="button" onclick="back()" value="返回">
+	</form>
+</body>
+
+</html>

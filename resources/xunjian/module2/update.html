@@ -1,0 +1,99 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+	<title>无标题文档</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+      <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+	  <style>
+	     label{
+              color:red;
+              
+             }
+   td{
+      font-size:15px  
+        }
+		 div{
+      font-size:15px  
+        }
+	  </style>
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li>巡检任务管理</li>
+    <li>巡检任务制定与分配</li>
+    <li>修改巡检任务</li>
+    </ul>
+    </div>
+    
+    <div class="formbody">
+    
+    <div class="formtitle"><span>回执录入</span></div>
+
+	   <ul class="forminfo">
+    <form action="index.html" method="post" >
+   <table class="tablelist">
+   
+        <tr>
+             <td> 西渭1号线
+                <ol class="forminfo">
+                    <li><a href="#" class="tablelink">xw00001</a></li>
+                    <li><a href="#" class="tablelink">xw00002</a></li>
+                    <li><a href="#" class="tablelink">xw00003</a></li>
+                     ........
+                     ........
+                    <li><a href="#" class="tablelink">xw00255</a></li>
+                    <li><a href="#" class="tablelink">xw00256</a></li>
+                 </ol>
+             </td>
+             
+             <td colspan="2" align="left">
+              <ul class="forminfo">
+					<form action="index.html" method="post" >
+			
+					<li><label>线路编号</label>XW001</li>
+					<li><label>杆塔编号</label>XW00001</li>
+					<li><label>缺陷类型</label><div >
+                        <select  class="dfinput" ><option>--请选择--</option><option selected>叉梁断裂</option><option>拦河线断裂</option><option>杆塔倾斜</option></select>
+                        </div></li>
+                    <li><label>缺陷级别</label><div >
+                        <select  class="dfinput" ><option>--请选择--</option><option>一般</option><option>严重</option><option selected>紧急</option></select>
+                        </div></li>
+					<li><label>完好率</label><input name="state" type="text" class="dfinput" value="85%"/></li>
+					<li><label>发现时间</label>系统当前时间</li>
+					<li><label>发现人员</label>发现人为当前登录人员</li>
+                    <li><label>缺陷描述</label><textarea class="dfinput">需尽快修复</textarea>
+					
+			   </ul>
+              </td>
+        </tr>  
+   <tr><td colspan="3">
+   <input type="submit" value="上传回执"  class="scbtn">
+   <input type="submit" value="保存"  class="scbtn">
+   <input name="" type="submit" class="btn" value="返回"/></td></tr>
+	</form>
+<table>
+   
+    </form>
+    </ul>
+    
+    
+    </div>
+
+
+</body>
+       <font style="color:red" >上传回执:<br/>1.点击左边的杆塔号,右侧显示对应信息表单<br/>
+       2.如杆塔录入后点击保存,左侧杆塔号变成红色(其他颜色)<br/>
+	   3.所有杆塔信息录入完成后,点击上传回执,保存该线路回执录入</font>
+</html>

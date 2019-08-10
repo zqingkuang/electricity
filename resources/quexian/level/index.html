@@ -1,0 +1,177 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+	<title>无标题文档</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../../css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="../../js/select-ui.min.js"></script>
+<script type="text/javascript" src="../../editor/kindeditor.js"></script>
+
+<script type="text/javascript">
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+  
+<script type="text/javascript">
+$(document).ready(function(e) {
+
+	$(".select3").uedSelect({
+		width : 100
+	});
+});
+</script>
+</head>
+
+<body class="sarchbody" >
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li>缺陷管理</li>
+    <li>缺陷类型设置</li>
+    
+    </ul>
+    </div>
+    
+    <div class="formbody">
+    
+    
+    <div id="usual1" class="usual"> 
+    
+    
+    
+    <ul class="seachform1">
+    <form action="index.html" method="post">
+    <li><label>任务编号</label><input name="name" type="text" class="scinput1" value=""/></li>
+     <li><label>线路编号</label><input name="name" type="text" class="scinput1" value=""/></li>
+    
+  <li><input  type="submit" class="scbtn" value="查询"/>&nbsp;
+  </form>
+  <input name=""   type="button" class="scbtn1" value="保存"/></li>
+    
+    </ul>
+    <script type="text/javascript">
+$(document).ready(function(){
+  $(".scbtn1").click(function(){
+  $(".seachform2").fadeIn(200);
+  }); 
+
+  $('#sure').click(function(){
+	  var nowPage=$('#go').val();
+	  if(nowPage!=""){
+	  location.href="RoleManagerController/index.do?nowPage="+nowPage;
+	  }
+  });
+  
+  $('#add').click(function(){
+	  location.href="add.html";
+  });
+  
+ 
+});
+
+ function del(){
+   confirm("确认删除");
+ }
+</script>
+    <table class="tablelist" >
+    	<thead>
+    	<tr>
+        
+        <th>任务编号</th>
+        <th>线路编号</th>
+        <th>塔杆编号</th>
+        <th>缺陷类型</th> 
+        <th>完好率</th>
+        <th>缺陷描述</th>
+        <th>发现时间</th>
+        <th>发现人员</th>
+        <th>缺陷级别</th>
+        </tr>
+        </thead>
+        <tbody>
+     
+        <tr>       
+         <td>LTX0245</td>
+         <td>XW0010</td>
+         <td>XW0001</td>
+         <td>拦河线断裂</td>
+         <td>80%</td>
+         <td>断裂严重</td>
+         <td>2015-2-10</td>
+         <td>检测人员1</td>
+         <td>  <div class="vocation">      
+              <select class="select3"  name="state"  ><option>--请选择--</option>
+                <option>紧急</option><option>一般</option><option>严重</option> 
+              </select> </div>   
+         </td>
+        </tr> 
+        <tr>       
+         <td>LTX0235</td>
+         <td>XW0012</td>
+         <td>XW0001</td>
+         <td>拦河线断裂</td>
+         <td>80%</td>
+         <td>断裂严重</td>
+         <td>2015-2-10</td>
+         <td>检测人员1</td>
+         <td>  <div class="vocation">      
+              <select class="select3"  name="state"  ><option>--请选择--</option>
+                <option>紧急</option><option>一般</option><option>严重</option> 
+              </select> </div>   
+         </td>
+        </tr> 
+        <tr>       
+         <td>LTX0265</td>
+         <td>XW0020</td>
+         <td>XW0001</td>
+         <td>拦河线断裂</td>
+         <td>80%</td>
+         <td>断裂严重</td>
+         <td>2015-2-10</td>
+         <td>检测人员1</td>
+         <td>  <div class="vocation">      
+              <select class="select3"  name="state"  ><option>--请选择--</option>
+                <option>紧急</option><option>一般</option><option>严重</option> 
+              </select> </div>   
+         </td>
+        </tr> 
+       
+       
+        </tbody>
+    </table>
+    <script type="text/javascript">
+    function del(id){
+  	  if(confirm("确认删除？")){
+  		  location.href="<%=basePath%>RoleManagerController/delete.do?id="+id;
+  	  }
+    }
+    </script>
+    <table class="tablelist2">
+       <tr>
+         <th>共2条记录
+        	 当前：1/2页&nbsp;&nbsp;
+          <a href="#">首页</a><a href="#">上一页</a><a href="#">下一页</a><a href="#">尾页</a>
+         
+         &nbsp;&nbsp;跳到:<input type="text" value="" onkeyup="value=value.replace(/[^\d]/g,'')" id="go" class="scinput5" />页 &nbsp;&nbsp;<input type="button" id="sure" class="scbtn5" value="确定"/> &nbsp;&nbsp; &nbsp;&nbsp;
+         </th>
+       </tr>
+    </table>
+      
+	</div> 
+    </div>
+
+<font color="red"><h1>说明:确认级别后的数据在列表中不再显示<h1></font>
+</body>
+
+</html>

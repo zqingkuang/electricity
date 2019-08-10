@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>我的工作平台</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="js/select-ui.min.js"></script>
+<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+<!--弹窗 -->
+<script type="text/javascript">
+  
+  function disp_confirm(id){
+   if(confirm("您确删除吗？？")){
+  		
+   }
+ };
+
+  function tingyong_confirm(p){
+   if(confirm("您确定要停用吗？？")) {
+   
+    }
+  }
+  
+</script>
+
+   <script type="text/javascript">
+$(document).ready(function(){
+  $(".scbtn1").click(function(){
+  $(".seachform2").fadeIn(200);
+  }); 
+
+  $('#sure').click(function(){
+	  var nowPage=$('#go').val();
+	  if(nowPage!=""){
+	  location.href="PoleController/index.do?nowPage="+nowPage;
+	  }
+  });
+  
+</script>
+
+</head>
+<body class="sarchbody" >
+    <div class="place">
+	<span>位置：</span>
+	<ul class="placeul">
+		<li>首页</a></li>
+		<li>基本内容</a></li>
+	</ul>
+    </div>
+    
+    <div class="formbody">
+    <div id="usual1" class="usual"> 
+	 <ul class="seachform1">
+	<form action="#" method="post">
+				<li><label>线路名称：</label><input name="liName" type="text" class="scinput1"/></li>
+				
+				<!--<li><label>线路状态：</label>
+					<div class="vocation">
+						<select class="select3" name="postats">
+							<option value="-1">--未选择--</option>
+							<option value="0" selected="selected">启用</option>	
+							<option value="1">未启用</option>
+								
+						</select>
+					</div></li>-->
+
+				<!-- <li><input type="submit" class="scbtn1" value="清空" /> -->
+					<li><input type="submit" class="scbtn" value="查询" /> 
+	           </form>
+	               <input name="" type="button" class="scbtn1" value="添加杆塔" onclick="location.href='pole_add.html'" /></li><br/>
+	         </ul><br>
+
+	<table class="tablelist">
+		<thead>
+			<tr>
+				
+				<th>编号</th>
+				<th>杆塔编号</th>
+				<th>所属线路</th>
+				<th>状态（停用/启用）</th>
+				<th>修改</th>
+				<th>停用</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+			<c:forEach var="p" items="${poleList}">
+			<tr>
+			
+						<td>123</td>
+						<td>xx1234</td>
+						<td>西南线</td>
+						<c:if test="${p.postats ==0}">
+							<td>启 用</td>
+						</c:if>
+						
+						<td><input type="button" onclick="location.href='pole_edit.html'" class="tablelink" value="修改" /></td>
+						<td><input type="button" class="tablelink" onclick="tingyong_confirm(1)" value="停用" /></td>
+						<td><input type="button" class="tablelink" onclick="disp_confirm(1)" value="删除" /></td>
+						
+						<!-- <a href="pole_edit.html">修改</a> -->
+					</tr>
+				</c:forEach>
+	</tbody>
+
+		<tbody>
+			<tr>
+			<c:forEach var="p" items="${poleList}">
+			<tr>
+			
+						<td>124</td>
+						<td>xx1234</td>
+						<td>西南线</td>
+						<c:if test="${p.postats ==0}">
+							<td>启 用</td>
+						</c:if>
+						
+						<td><input type="button" onclick="location.href='pole_edit.html'" class="tablelink" value="修改" /></td>
+						<td><input type="button" class="tablelink" onclick="tingyong_confirm(1)" value="停用" /></td>
+						<td><input type="button" class="tablelink" onclick="disp_confirm(1)" value="删除" /></td>
+						
+						<!-- <a href="pole_edit.html">修改</a> -->
+					</tr>
+				</c:forEach>
+	</tbody>
+
+
+
+		<tbody>
+			<tr>
+			
+			<tr>
+			
+						<td>125</td>
+						<td>xx1234</td>
+						<td>西南线</td>
+						<c:if test="${p.postats ==0}">
+							<td>启 用</td>
+						</c:if>
+						
+						<td><input type="button" onclick="location.href='pole_edit.html'" class="tablelink" value="修改" /></td>
+						<td><input type="button" class="tablelink" onclick="tingyong_confirm(1)" value="停用" /></td>
+						<td><input type="button" class="tablelink" onclick="disp_confirm(1)" value="删除" /></td>
+						
+						<!-- <a href="pole_edit.html">修改</a> -->
+					</tr>
+			
+	</tbody>
+
+              </table>
+				
+	<table class="tablelist2">
+       <tr>
+         <th>共20条记录
+        	 当前：1/2页&nbsp;&nbsp;
+          
+          <a href="#">首页</a>
+          &nbsp;<a href="#">上一页</a>
+        
+          <a href="#">下一页</a>&nbsp; <a href="#">尾页</a> 
+         
+         
+         
+         &nbsp;&nbsp;跳到:<input type="text" value="" onkeyup="value=value.replace(/[^\d]/g,'')" id="go" class="scinput5" />页 &nbsp;&nbsp;<input type="button" id="sure" class="scbtn5" value="确定"/> &nbsp;&nbsp; &nbsp;&nbsp;
+         </th>
+       </tr>
+    </table>
+    </div>
+    </div>
+    </body>
+	</html>
