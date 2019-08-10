@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'electricity.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test_elect',
+        'USER':'root',
+        'PASSWORD': 'root',
+        'HOST':'172.16.43.29',
+        'POST':3306
     }
 }
 
