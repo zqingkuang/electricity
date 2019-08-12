@@ -10,6 +10,7 @@ class BehebungTack(models.Model):
         (1, '已完成')
 
     )
+    b_number = models.CharField(max_length=10, verbose_name='任务编号')
     b_blemish = models.ForeignKey(BlemishTask, on_delete=models.CASCADE, verbose_name='缺陷任务')
     b_name = models.CharField(max_length=10, verbose_name='消缺任务名称')
     b_voucher = models.CharField(max_length=50, verbose_name='工作单据')

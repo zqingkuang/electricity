@@ -1,5 +1,6 @@
 from django.db import models
 
+from pole.models import Pole
 from user.models import User
 
 
@@ -21,6 +22,7 @@ class Blemish(models.Model):
 
 class BlemishTask(models.Model):
     """缺陷任务模型类"""
+    b_pole = models.ForeignKey(Pole, on_delete=models.CASCADE, verbose_name='塔杆对应外键')
     b_blemish = models.ForeignKey(Blemish, on_delete=models.CASCADE, verbose_name='缺陷类型')
     b_rank = models.CharField(max_length=10, verbose_name='缺陷级别')
     b_rate = models.CharField(max_length=10, verbose_name='完好率')

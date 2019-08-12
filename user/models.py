@@ -7,6 +7,7 @@ class Role(models.Model):
         (0, '启用'),
         (1, '禁用')
     )
+    r_number = models.CharField(max_length=10, verbose_name='角色编号')
     entry_time = models.DateTimeField(auto_now_add=True, verbose_name='角色创建时间')
     r_name = models.CharField(max_length=10, verbose_name='角色名称')
     change_time = models.DateTimeField(auto_now=True, verbose_name='角色')
@@ -44,10 +45,9 @@ class User(models.Model):
     phone = models.CharField(max_length=11, verbose_name='用户电话', null=True)
     entry_time = models.DateTimeField(auto_now_add=True, verbose_name='入职时间')
     address = models.CharField(max_length=50, verbose_name='用户地址', null=True)
-    change_time = models.DateTimeField(auto_now=True, verbose_name='用户上次修改时间')
+    change_time = models.DateTimeField(default=None, verbose_name='用户上次修改时间')
     u_state = models.SmallIntegerField(choices=ORDER_STATUS_CHOICES, verbose_name='用户状态')
     role = models.ForeignKey(Role, on_delete=models.CASCADE, verbose_name='用户角色')
-    # group = models.ForeignKey(UserInfo, on_delete=models.CASCADE, null=True, verbose_name='用户所属组')
     u_resignation_time = models.DateTimeField(default=None, verbose_name='离职时间')
 
     def sex(self):
